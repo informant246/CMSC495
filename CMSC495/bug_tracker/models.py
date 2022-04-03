@@ -4,13 +4,6 @@ from django.conf import settings
 
 
 class BugTracker(models.Model):
-    # ! todo
-    # Create a form for the bug tracker
-    # Create the user application
-    # Create the list view for the home page
-    # Create the templates
-    # Create CRUD views for the Bug Tracker
-
     """ 
     Model class represents the bug tracker object. Detailing what problem what 
     the developer is dealing with in their program
@@ -37,4 +30,4 @@ class BugTracker(models.Model):
         return self.bug_title
 
     class Meta:
-        ordering = ["date"]
+        ordering = ["-date"]

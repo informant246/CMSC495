@@ -1,0 +1,8 @@
+{%extends 'bug_tracker/base.html'%}
+<!--  -->
+
+{%block content%}
+<h1>Profile</h1>
+{{user.username}} {{user.first_name}} {{user.last_name}}
+<a href="{% url 'edit' %}"> <button>Edit Profile</button></a>
+{%endblock%}

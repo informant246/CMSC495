@@ -7,10 +7,11 @@
   <h3>{{bug.bug_risk}}</h3>
   <h3>Project: {{bug.project_name}}</h3>
   <h3>{{bug.user}}</h3>
-  <l3>Exception Rose : {{bug.date_occured}}</l3>
+  <h3>Exception Rose : {{bug.date_occured}}</h3>
   <p>{{bug.bug_description}}</p>
 </div>
 
+{%if user.is_authenticated%}
 <a href="{% url 'bug_update' bug.id %}"><button>Update</button></a>
-
-{%endblock%}
+<a href="{% url 'bug_delete' bug.id%}"> <button>Delete</button></a>
+{%else%} {%endif%} {%endblock%}

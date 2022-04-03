@@ -1,11 +1,8 @@
-{%extends 'bug_tracker/base.html'%}
+{%extends 'bug_tracker/base.html'%} {% load crispy_forms_tags%}
 <!--  -->
- {%block content%}
+{%block content%}
 
- {%if user.is_authenticated%}
-  <button>Create New Bug</button></a>
-{%endif%}
-<!-- Bug Loop -->
+<h1>Search Results</h1>
 <ul>
   {% for bug in object_list %}
   <h1>{{bug.bug_title}}</h1>
@@ -16,11 +13,8 @@
   <li>Username : {{bug.user}}</li>
   <li>Date Bug Occured : {{bug.date_occured}}</li>
   <li>Bug Description : {{bug.bug_description|truncatewords:"50"}}</li>
-
   <a href="{%url 'bug_detail' bug.pk%}"><button>View Bug</button></a>
-  {% empty%}
-  <p>No bugs to view</p>
-  {%endfor%}
-</ul>
 
-{%endblock content%}
+  {% endfor %}
+</ul>
+{%endblock%}
